@@ -9,8 +9,7 @@ export default function socketHandler(req, res) {
             socket.on("room", msg => {
                 socket.join(msg.room_id);
             });
-
-
+            
             socket.on("message", msg => {
                 socket.to(msg.room_id).emit("message", msg);
             });
