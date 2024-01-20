@@ -2,7 +2,7 @@ import { Server } from 'socket.io'
 
 export default function socketHandler(req, res) {
     if (!res.socket.server.io) {
-        const io = new Server(res.socket.server, { maxHttpBufferSize: 1e8 })
+        const io = new Server(res.socket.server, { maxHttpBufferSize: 1e9 })
         res.socket.server.io = io
 
         io.on('connection', socket => {
